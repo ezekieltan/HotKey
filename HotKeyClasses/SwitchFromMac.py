@@ -7,11 +7,11 @@ class SwitchFromMac(HotKeys):
     def __init__(self):
         super().__init__()
         self.setMacros({
-            'spotlight': {'keys': ['rctrl','space']},
+            'spotlight': {'keys': ['rctrl', 'space']},
             'altToCtrlDown': {'sequences': [[{'key': 'alt', 'down': True}]]},
             'altToCtrlUp': {'sequences': [[{'key': 'alt', 'down': False}]]},
-            'altTab': {'keys': ['rctrl','tab']},
-            'altF4': {'keys': ['rctrl','f4']},
+            'altTab': {'keys': ['rctrl', 'tab']},
+            'altF4': {'keys': ['rctrl', 'f4']},
         })
         print(self.getMacros())
 
