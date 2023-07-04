@@ -16,7 +16,7 @@ class MultiClipboardHotKeys(HotKeys):
         ]} for x in range(0, 10)}
         outMacros = {'out' + str(x): {'keys': ['ctrl', 'shift', str(x)], 'hold': ['ctrl', 'shift']} for x in
                      range(0, 10)}
-        inMacros = {'in' + str(x): {'keys': [self.CtrlOrCmd, 'alt', str(x)]} for x in range(0, 10)}
+        inMacros = {'in' + str(x): {'keys': [self.CtrlOrCmd, 'ralt', str(x)]} for x in range(0, 10)}
         blockers = {'blocker' + str(x): {'keys': ['ctrl', str(x)]} for x in range(0, 10)}
         self.setMacros(inMacros)
         self.setMacros(outMacros)
@@ -28,7 +28,7 @@ class MultiClipboardHotKeys(HotKeys):
             pass
         elif macroName.startswith('middle'):
             keyPresser.pressAndReleaseWithModifiers('c', [self.CtrlOrCmd])
-            keyPresser.pressAndReleaseWithModifiers(macroName[6:], [self.CtrlOrCmd, 'alt'])
+            keyPresser.pressAndReleaseWithModifiers(macroName[6:], [self.CtrlOrCmd, 'ralt'])
 
         elif macroName.startswith('in'):
             for depressedKey in self.macros[macroName]['keys']:
