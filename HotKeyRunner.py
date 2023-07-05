@@ -3,6 +3,7 @@ import tkinter as tk
 from HotKeyClasses.MultiClipboardHotKeys import MultiClipboardHotKeys
 from HotKeyClasses.SwitchFromMac import SwitchFromMac
 from HotKeyClasses.VolumeHotKeys import VolumeHotKeys
+from HotKeyClasses.MediaHotKeys import MediaHotKeys
 from KBHandler import KBHandler
 
 
@@ -11,7 +12,7 @@ def afterFunc():
     kbHandler.run_event_loop()
 
 
-hks = [MultiClipboardHotKeys(), SwitchFromMac(), VolumeHotKeys()]
+hks = [MultiClipboardHotKeys(), SwitchFromMac(), VolumeHotKeys(), MediaHotKeys()]
 kbHandler = KBHandler()
 kbHandler.addHks(hks)
 
