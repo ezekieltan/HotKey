@@ -1,9 +1,11 @@
 import tkinter as tk
 
 from HotKeyClasses.MultiClipboardHotKeys import MultiClipboardHotKeys
-from HotKeyClasses.SwitchFromMac import SwitchFromMac
 from HotKeyClasses.VolumeHotKeys import VolumeHotKeys
 from HotKeyClasses.MediaHotKeys import MediaHotKeys
+from HotKeyClasses.ChromeHotKeys import ChromeHotKeys
+from HotKeyClasses.ControlPanelHotKeys import ControlPanelHotKeys
+from HotKeyClasses.UnderclockingHotKeys import UnderclockingHotKeys
 from KBHandler import KBHandler
 
 
@@ -12,7 +14,7 @@ def afterFunc():
     kbHandler.run_event_loop()
 
 
-hks = [MultiClipboardHotKeys(), SwitchFromMac(), VolumeHotKeys(), MediaHotKeys()]
+hks = [MultiClipboardHotKeys(), VolumeHotKeys(), MediaHotKeys(), ChromeHotKeys(), ControlPanelHotKeys(), UnderclockingHotKeys()]
 kbHandler = KBHandler()
 kbHandler.addHks(hks)
 
