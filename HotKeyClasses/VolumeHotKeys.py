@@ -13,6 +13,8 @@ class VolumeHotKeys(HotKeys):
         print(self.getMacros())
 
     def execute(self, macroName):
+        if(not self.linuxCheck(macroName)):
+            return
         for depressedKey in self.macros[macroName]['keys']:
             keyPresser.release(depressedKey)
             pass

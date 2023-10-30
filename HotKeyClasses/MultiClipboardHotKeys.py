@@ -5,7 +5,7 @@ import keyPresser
 
 
 class MultiClipboardHotKeys(HotKeys):
-
+    # Windows and Mac only
     def __init__(self):
         super().__init__(False)
         middleMacros = {'middle' + str(x): {'sequences': [

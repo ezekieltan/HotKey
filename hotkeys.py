@@ -1,5 +1,5 @@
 import platform
-
+import time
 
 class HotKeys:
     def __init__(self, ignoreFn=True):
@@ -17,6 +17,19 @@ class HotKeys:
             'CTRL': ['CONTROL', 'CTRL'],
             'SHIFT': ['SHIFT'],
         }
+        self.lastExecuted = {}
+        self.linuxTimeout = 0.05
+    def linuxCheck(self, macroName):
+        if(self.operatingSystem != 'linux'):
+            return True
+        if macroName not in self.lastExecuted:
+            self.lastExecuted[macroName] = time.time()
+            return True
+        if(time.time() - self.linuxTimeout <= self.lastExecuted[macroName]):
+            print(macroName, 'blocked')
+            return False
+        self.lastExecuted[macroName] = time.time()
+        return True
 
     def getMacros(self):
         return self.macros

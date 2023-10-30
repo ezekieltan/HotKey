@@ -3,7 +3,7 @@ import keyPresser
 
 
 class MediaHotKeys(HotKeys):
-    # Only available on Windows
+    # Only available on Windows and Linux
     def __init__(self):
         super().__init__()
         self.setMacros({
@@ -14,6 +14,8 @@ class MediaHotKeys(HotKeys):
         print(self.getMacros())
 
     def execute(self, macroName):
+        if(not self.linuxCheck(macroName)):
+            return
         for depressedKey in self.macros[macroName]['keys']:
             keyPresser.release(depressedKey)
             pass
